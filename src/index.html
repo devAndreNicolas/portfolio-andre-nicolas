@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Nicolas | Desenvolvedor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- DevIcons para ícones mais específicos de tecnologias -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="#">
+                André<span class="accent">Nicolas</span>
+            </a>
+            <a role="button" class="navbar-burger" id="menu-toggle" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            <div class="navbar-end">
+                <a href="#home" class="navbar-item">Home</a>
+                <a href="#about" class="navbar-item">Sobre</a>
+                <a href="#projects" class="navbar-item">Projetos</a>
+                <a href="#skills" class="navbar-item">Habilidades</a>
+                <a href="#contact" class="navbar-item">Contato</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column">
+                        <h1 class="title is-1 has-text-weight-bold">André <span class="accent">Nicolas</span></h1>
+                        <h2 class="subtitle is-3 mb-4">Desenvolvedor Full Stack</h2>
+                        <p class="subtitle is-5 has-text-grey mb-5">Transformando ideias em soluções digitais com código limpo e design moderno.</p>
+                        <div class="buttons">
+                            <a href="#projects" class="button is-dark is-medium">Ver Projetos</a>
+                            <a href="#contact" class="button is-outlined is-dark is-medium">Contato</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="profile-container">
+                            <div class="profile-image-container">
+                                <img src="https://via.placeholder.com/320" alt="André Nicolas" id="profile-image">
+                            </div>
+                            <div class="profile-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section has-background-dark has-text-white">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered has-text-white mb-6">Sobre <span class="accent">Mim</span></h2>
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="about-card">
+                        <p class="is-size-5 mb-4">
+                            Sou um desenvolvedor Full Stack apaixonado por criar soluções digitais inovadoras e funcionais.
+                            Com experiência em diversas tecnologias web modernas, busco sempre entregar projetos de alta qualidade.
+                        </p>
+                        <p class="is-size-5">
+                            Minha jornada na programação começou com a curiosidade de entender como as coisas funcionam por trás das interfaces.
+                            Essa curiosidade evoluiu para uma paixão por resolver problemas complexos através do código.
+                        </p>
+                        <div class="about-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="columns is-multiline">
+                        <div class="column is-6">
+                            <div class="about-item">
+                                <h3 class="title is-5 has-text-white">Formação</h3>
+                                <p>Ciência da Computação</p>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="about-item">
+                                <h3 class="title is-5 has-text-white">Experiência</h3>
+                                <p>Desenvolvimento Full Stack</p>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="about-item">
+                                <h3 class="title is-5 has-text-white">Interesses</h3>
+                                <p>Web, Mobile, UI/UX</p>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="about-item">
+                                <h3 class="title is-5 has-text-white">Localização</h3>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Meus <span class="accent">Projetos</span></h2>
+            <div class="columns is-multiline" id="projects-container">
+                <!-- Projects will be loaded dynamically -->
+                <div class="column is-4">
+                    <div class="card project-card">
+                        <div class="card-image project-image">
+                            <figure class="image is-4by3">
+                                <img src="https://via.placeholder.com/400x300/3498db/ffffff?text=Carregando" alt="Carregando projeto">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="title is-4">Carregando projetos...</h3>
+                            <p class="subtitle is-6 has-text-grey mb-4">Por favor, aguarde enquanto carregamos os projetos.</p>
+                            <div class="tags mb-4">
+                                <span class="tag is-light">Carregando</span>
+                            </div>
+                            <a href="#" class="project-link">
+                                Aguarde
+                                <span class="icon">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                    </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered mt-6">
+                <a href="https://github.com/devAndreNicolas" target="_blank" class="button is-outlined is-dark">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                    <span>Ver mais no GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section has-background-dark has-text-white">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered has-text-white mb-6">Minhas <span class="accent">Habilidades</span></h2>
+            <div class="columns is-multiline">
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-html5-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">HTML/CSS</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-javascript-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">JavaScript</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-typescript-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">TypeScript</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-angularjs-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Angular</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-nodejs-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Node.js</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-express-original fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Express.js</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-python-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Python</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-pandas-original colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Pandas</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-area fa-2x" style="color: #4e79a7;"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Seaborn</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-flask-original fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Flask</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-mysql-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">SQL</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="devicon-figma-plain colored fa-2x"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">UX/UI Design</h3>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush fa-2x" style="color: #ff7c7c;"></i>
+                        </div>
+                        <h3 class="title is-5 has-text-white">Web Design</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Entre em <span class="accent">Contato</span></h2>
+            <div class="box contact-box">
+                <div class="columns">
+                    <div class="column is-8">
+                        <form id="contact-form">
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <div class="field">
+                                        <label class="label" for="name">Nome</label>
+                                        <div class="control">
+                                            <input class="input" type="text" id="name" name="name" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="field">
+                                        <label class="label" for="email">Email</label>
+                                        <div class="control">
+                                            <input class="input" type="email" id="email" name="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="subject">Assunto</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="subject" name="subject">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="message">Mensagem</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="message" name="message" rows="4" required></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit" class="button is-dark is-fullwidth">Enviar Mensagem</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="column is-4 has-background-dark has-text-white contact-info">
+                        <h3 class="title is-4 has-text-white mb-4">Informações de Contato</h3>
+                        <ul class="contact-list">
+                            <li>
+                                    <span class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                <a href="mailto:contato@andrenicolas.dev">contato@andrenicolas.dev</a>
+                            </li>
+                            <li>
+                                    <span class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </span>
+                                <span>Brasil</span>
+                            </li>
+                        </ul>
+
+                        <h3 class="title is-4 has-text-white mt-5 mb-4">Redes Sociais</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/devAndreNicolas" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer has-background-dark has-text-white">
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column">
+                <a href="#" class="logo has-text-white">André<span class="accent">.dev</span></a>
+                <p class="mt-2 has-text-grey-light">Desenvolvedor Full Stack</p>
+            </div>
+            <div class="column has-text-right-desktop has-text-centered-mobile">
+                <p class="has-text-grey-light">&copy; 2023 André Nicolas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
