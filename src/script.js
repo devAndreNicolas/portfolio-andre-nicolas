@@ -103,21 +103,21 @@ const ProjectManager = {
 
     // Lista de repositórios a serem exibidos (nome exato do repositório no GitHub)
     // Você pode adicionar/remover/reordenar esta lista para controlar quais projetos são exibidos
-    featuredRepos: ["dotask", "gerenciamento-financeiro", "bot-uncisal-restaurantes", "analise-de-vendas" ,"arg-flog", "andplayer"],
+    featuredRepos: ["Dotask", "gerenciamento-financeiro", "bot-uncisal-restaurantes", "analise-de-vendas" ,"arg-flog", "andplayer"],
 
     // Mapeamento de imagens personalizadas para cada repositório
     // A chave é o nome do repositório, o valor é a URL da imagem
     repoImages: {
-        "portfolio-website": "https://via.placeholder.com/400x300/3498db/ffffff?text=Portfolio",
-        "api-project": "https://via.placeholder.com/400x300/e74c3c/ffffff?text=API",
-        "data-analysis": "https://via.placeholder.com/400x300/2ecc71/ffffff?text=Data",
-        "mobile-app": "https://via.placeholder.com/400x300/9b59b6/ffffff?text=Mobile",
-        "web-dashboard": "https://via.placeholder.com/400x300/f39c12/ffffff?text=Dashboard",
-        "e-commerce": "https://via.placeholder.com/400x300/1abc9c/ffffff?text=E-Commerce",
+        "Dotask": "https://www.macobserver.com/wp-content/uploads/2019/05/workfeatured-GitHub-2.png",
+        "gerenciamento-financeiro": "https://via.placeholder.com/400x300/e74c3c/ffffff?text=API",
+        "bot-uncisal-restaurantes": "https://via.placeholder.com/400x300/2ecc71/ffffff?text=Data",
+        "analise-de-vendas": "https://via.placeholder.com/400x300/9b59b6/ffffff?text=Mobile",
+        "arg-flog": "https://via.placeholder.com/400x300/f39c12/ffffff?text=Dashboard",
+        "andplayer": "https://via.placeholder.com/400x300/1abc9c/ffffff?text=E-Commerce",
     },
 
     // Imagem padrão caso o repositório não tenha uma imagem definida
-    defaultImage: "https://via.placeholder.com/400x300/34495e/ffffff?text=Projeto",
+    defaultImage: "https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_1280.png",
 
     // Armazena os dados dos repositórios
     repoData: {},
