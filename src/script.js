@@ -131,16 +131,34 @@ const ProjectManager = {
         const projectsContainer = document.getElementById("projects-container")
         if (!projectsContainer) return
 
-        projectsContainer.innerHTML = `
-      <div class="column is-12 has-text-centered">
-        <div class="py-6">
-          <span class="icon is-large">
-            <i class="fas fa-spinner fa-pulse fa-3x"></i>
-          </span>
-          <p class="mt-4 is-size-5">Carregando projetos...</p>
-        </div>
-      </div>
-    `
+        // Limpa apenas o conteúdo, sem recriar o elemento
+        projectsContainer.textContent = ""
+
+        // Criando os elementos dinamicamente
+        const loadingDiv = document.createElement("div")
+        loadingDiv.classList.add("column", "is-12", "has-text-centered")
+
+        const innerDiv = document.createElement("div")
+        innerDiv.classList.add("py-6")
+
+        const iconSpan = document.createElement("span")
+        iconSpan.classList.add("icon", "is-large")
+
+        const icon = document.createElement("i")
+        icon.classList.add("fas", "fa-spinner", "fa-pulse", "fa-3x")
+
+        const text = document.createElement("p")
+        text.classList.add("mt-4", "is-size-5")
+        text.textContent = "Carregando projetos..."
+
+        // Construindo a estrutura
+        iconSpan.appendChild(icon)
+        innerDiv.appendChild(iconSpan)
+        innerDiv.appendChild(text)
+        loadingDiv.appendChild(innerDiv)
+
+        // Adicionando ao container
+        projectsContainer.appendChild(loadingDiv)
     },
 
     fetchRepositories: function () {
@@ -209,13 +227,25 @@ const ProjectManager = {
         const projectsContainer = document.getElementById("projects-container")
         if (!projectsContainer) return
 
-        projectsContainer.innerHTML = `
-      <div class="column is-12">
-        <div class="notification is-warning">
-          <p>Não foi possível carregar os projetos do GitHub. Por favor, tente novamente mais tarde.</p>
-        </div>
-      </div>
-    `
+        // Remove apenas o conteúdo sem recriar o container
+        projectsContainer.textContent = ""
+
+        // Criando os elementos dinamicamente
+        const errorDiv = document.createElement("div")
+        errorDiv.classList.add("column", "is-12")
+
+        const notificationDiv = document.createElement("div")
+        notificationDiv.classList.add("notification", "is-warning")
+
+        const errorText = document.createElement("p")
+        errorText.textContent = "Não foi possível carregar os projetos do GitHub. Por favor, tente novamente mais tarde."
+
+        // Montando a estrutura
+        notificationDiv.appendChild(errorText)
+        errorDiv.appendChild(notificationDiv)
+
+        // Adicionando ao container
+        projectsContainer.appendChild(errorDiv)
     },
 
     displayProjects: function () {
@@ -223,70 +253,111 @@ const ProjectManager = {
         if (!projectsContainer) return
 
         // Limpar o container
-        projectsContainer.innerHTML = ""
+        projectsContainer.textContent = ""
 
         // Se não há dados, mostrar mensagem
         if (!this.repoData || this.repoData.length === 0) {
-            projectsContainer.innerHTML = `
-        <div class="column is-12">
-          <div class="notification is-info">
-            <p>Nenhum projeto encontrado.</p>
-          </div>
-        </div>
-      `
+            const noProjectsMessage = document.createElement("div")
+            noProjectsMessage.className = "column is-12"
+            noProjectsMessage.innerHTML = `
+            <div class="notification is-info">
+                <p>Nenhum projeto encontrado.</p>
+            </div>
+        `
+            projectsContainer.appendChild(noProjectsMessage)
             return
         }
 
         // Exibir cada repositório
         this.repoData.forEach((repo) => {
-            // Obter a imagem personalizada ou usar a padrão
             const imageUrl = this.repoImages[repo.name] || this.defaultImage
 
-            // Criar tags para as linguagens (se disponíveis)
-            let languageTags = ""
-            if (repo.language) {
-                languageTags = `<span class="tag is-light">${this.escapeHTML(repo.language)}</span>`
-            }
-
-            // Criar o card do projeto
+            // Criar elementos
             const projectCard = document.createElement("div")
             projectCard.className = "column is-4"
 
-            projectCard.innerHTML = `
-        <div class="card project-card">
-          <div class="card-image project-image">
-            <figure class="image is-4by3">
-              <img src="${imageUrl}" alt="${this.escapeHTML(repo.name)}">
-            </figure>
-          </div>
-          <div class="card-content">
-            <h3 class="title is-4">${this.escapeHTML(repo.name)}</h3>
-            <p class="subtitle is-6 has-text-grey mb-4">${this.escapeHTML(repo.description || "Sem descrição disponível")}</p>
-            <div class="tags mb-4">
-              ${languageTags}
-            </div>
-            <div class="level">
-              <div class="level-left">
-                <a href="${repo.html_url}" target="_blank" class="project-link">
-                  Ver Projeto
-                  <span class="icon">
-                    <i class="fas fa-arrow-right"></i>
-                  </span>
-                </a>
-              </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <span class="icon">
-                    <i class="fas fa-star"></i>
-                  </span>
-                  <span>${repo.stargazers_count || 0}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `
+            const card = document.createElement("div")
+            card.className = "card project-card"
 
+            const cardImage = document.createElement("div")
+            cardImage.className = "card-image project-image"
+
+            const figure = document.createElement("figure")
+            figure.className = "image is-4by3"
+
+            const img = document.createElement("img")
+            img.src = imageUrl
+            img.alt = this.escapeHTML(repo.name)
+
+            figure.appendChild(img)
+            cardImage.appendChild(figure)
+
+            const cardContent = document.createElement("div")
+            cardContent.className = "card-content"
+
+            const title = document.createElement("h3")
+            title.className = "title is-4"
+            title.textContent = repo.name
+
+            const description = document.createElement("p")
+            description.className = "subtitle is-6 has-text-grey mb-4"
+            description.textContent = repo.description || "Sem descrição disponível"
+
+            const tagsContainer = document.createElement("div")
+            tagsContainer.className = "tags mb-4"
+
+            if (repo.language) {
+                const languageTag = document.createElement("span")
+                languageTag.className = "tag is-light"
+                languageTag.textContent = repo.language
+                tagsContainer.appendChild(languageTag)
+            }
+
+            const level = document.createElement("div")
+            level.className = "level"
+
+            const levelLeft = document.createElement("div")
+            levelLeft.className = "level-left"
+
+            const projectLink = document.createElement("a")
+            projectLink.href = repo.html_url
+            projectLink.target = "_blank"
+            projectLink.className = "project-link"
+            projectLink.innerHTML = `Ver Projeto <span class="icon"><i class="fas fa-arrow-right"></i></span>`
+
+            levelLeft.appendChild(projectLink)
+
+            const levelRight = document.createElement("div")
+            levelRight.className = "level-right"
+
+            const starContainer = document.createElement("div")
+            starContainer.className = "level-item"
+
+            const starIcon = document.createElement("span")
+            starIcon.className = "icon"
+            starIcon.innerHTML = `<i class="fas fa-star"></i>`
+
+            const starCount = document.createElement("span")
+            starCount.textContent = repo.stargazers_count || 0
+
+            starContainer.appendChild(starIcon)
+            starContainer.appendChild(starCount)
+
+            levelRight.appendChild(starContainer)
+
+            level.appendChild(levelLeft)
+            level.appendChild(levelRight)
+
+            // Montando o Card
+            cardContent.appendChild(title)
+            cardContent.appendChild(description)
+            cardContent.appendChild(tagsContainer)
+            cardContent.appendChild(level)
+
+            card.appendChild(cardImage)
+            card.appendChild(cardContent)
+
+            projectCard.appendChild(card)
             projectsContainer.appendChild(projectCard)
         })
     },
